@@ -1,0 +1,14 @@
+---
+- name: RHV create a new VM from template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: Creates a new VM from template
+    ovirt_vm:
+      state: present
+      name: "{{ target_host_name }}"
+      template: "{{ rhv_template_name }}"
+      cluster: "{{ rhv_cluster_name }}"
+...
