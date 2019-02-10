@@ -11,4 +11,11 @@
       name: "{{ target_host_name }}"
       template: "{{ rhv_template_name }}"
       cluster: "{{ rhv_cluster_name }}"
+
+  - name: Power Up VM if needed
+    ovirt_vm:
+      state: running
+      name: "{{ target_host_name }}"
+      cluster: "{{ rhv_cluster_name }}"
+    when: vm_power_up == "Yes"
 ...
