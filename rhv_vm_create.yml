@@ -11,7 +11,7 @@
       name: "{{ target_host_name }}"
       template: "{{ rhv_template_name }}"
       cluster: "{{ rhv_cluster_name }}"
-      description: "Created with Ansible"
+      description: "{{ rhv_vm_description }}"
 
   - name: Power Up VM if needed
     ovirt_vm:
