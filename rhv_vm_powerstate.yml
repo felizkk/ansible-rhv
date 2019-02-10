@@ -1,0 +1,13 @@
+---
+- name: RHV Power On/Off a VM
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: Change VM state
+    ovirt_vm:
+      state: "{{ rhv_vm_state }}"
+      name: "{{ target_host_name }}"
+      cluster: "{{ rhv_cluster_name }}"
+...
