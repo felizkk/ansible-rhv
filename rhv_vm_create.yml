@@ -18,5 +18,6 @@
       state: running
       name: "{{ target_host_name }}"
       cluster: "{{ rhv_cluster_name }}"
+      wait: yes
     when: vm_power_up == "Yes"
 ...
